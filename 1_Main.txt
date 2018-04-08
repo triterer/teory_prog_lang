@@ -1,0 +1,44 @@
+import java.util.Scanner;
+public class Main {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		double x1, x2, x3, y1, y2, y3, z1, z2, z3;
+		Scanner sc = new Scanner(System.in);
+		
+		
+		x1 = sc.nextDouble();
+		x2 = sc.nextDouble();
+		x3 = sc.nextDouble();
+		y1 = sc.nextDouble();
+		y2 = sc.nextDouble();
+		y3 = sc.nextDouble();
+		z1 = sc.nextDouble();
+		z2 = sc.nextDouble();
+		z3 = sc.nextDouble();
+		
+		
+		Point3d a =new Point3d(x1,y1,z1);
+		Point3d b = new Point3d(x2, y2, z2);
+		Point3d c =new Point3d(x3,y3,z3);
+		//System.out.print(a+" "+b+" "+c);
+		if(!a.equals(b)&&!b.equals(c)&&!c.equals(a)){
+			System.out.print( computeArea(a, b, c));
+		}
+		else{
+			System.out.print("equal points");
+		}
+		
+		
+	}
+	public static double computeArea(Point3d a, Point3d b, Point3d c){
+		double AB = a.distanceTo(b);
+		double AC = a.distanceTo(c);
+		double BC = b.distanceTo(c);
+		double p = (AB+AC+BC)/2;
+		return Math.sqrt(p*(p-AB)*(p-AC)*(p-BC));
+	}
+
+}

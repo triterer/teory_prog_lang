@@ -1,0 +1,42 @@
+public class Point3d{
+	private double cordx, cordy, cordz;
+	
+	public Point3d(double x,
+            double y,
+            double z){
+		this.cordx=x;
+		this.cordy=y;
+		this.cordz=z;
+	}
+	public Point3d(){}
+	public double getx(){
+		return this.cordx;
+	}
+	public double gety(){
+		return this.cordy;
+	}
+	public double getz(){
+		return this.cordz;
+	}
+	public void setx(double valx){
+		this.cordx=valx;
+	}
+	public void sety(double valy){
+		this.cordx=valy;
+	}
+	public void setz(double valz){
+		this.cordx=valz;
+	}
+	public boolean equals(Point3d t1){
+		if((this.cordx==t1.cordx)&&(this.cordy==t1.cordy)&&(this.cordz==t1.cordz))
+			return true;
+		return false;
+	}
+	public double distanceTo(Point3d t1){
+		double x2 = this.cordx-t1.cordx;
+		double y2 = this.cordy-t1.cordy;
+		double z2 = this.cordz-t1.cordz;
+		return Math.sqrt(x2*x2+y2*y2+z2*z2);
+	}
+	
+}
